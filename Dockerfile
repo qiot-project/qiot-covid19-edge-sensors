@@ -8,5 +8,5 @@ COPY bootstrap.sh ./
 COPY sensors ./sensors
 
 # Start app
-EXPOSE 3333
+EXPOSE 5000
 ENTRYPOINT ["/usr/src/app/bootstrap.sh"]

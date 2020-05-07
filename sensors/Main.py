@@ -1,9 +1,9 @@
 from flask import Flask
-from AccountApi import account_api
+from Light import light
 
 app = Flask(__name__)
 
-app.register_blueprint(account_api)
+app.register_blueprint(light)
 
 @app.route("/")
 def hello():
