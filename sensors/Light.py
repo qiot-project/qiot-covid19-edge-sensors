@@ -5,12 +5,12 @@ try:
 except ImportError:
     import ltr559
 
-from flask import Blueprint, jsonify, make_response
+from flask import Blueprint
 from ReturnValue import return_simple
 account_api = Blueprint('light', __name__)
 
 
-@account_api.route("/light")
+@light.route("/light")
 def light():
             proximity = ltr559.get_proximity()
             if proximity < 10:
