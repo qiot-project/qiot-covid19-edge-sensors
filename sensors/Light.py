@@ -5,7 +5,6 @@ try:
 except ImportError:
     import ltr559
 
-from datetime import datetime
 from flask import Blueprint, jsonify, make_response
 from ReturnValue import return_simple
 account_api = Blueprint('light', __name__)
@@ -19,5 +18,4 @@ def light():
             else:
                 data = 1
 
-            headers = {}
             return return_simple(data, "Lux")
