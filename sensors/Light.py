@@ -7,10 +7,10 @@ except ImportError:
 
 from flask import Blueprint
 from ReturnValue import return_simple
-account_api = Blueprint('light', __name__)
+light_blueprint = Blueprint('light', __name__)
 
 
-@light.route("/light")
+@light_blueprint.route("/light")
 def light():
             proximity = ltr559.get_proximity()
             if proximity < 10:
