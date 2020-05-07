@@ -25,13 +25,13 @@ import logging
 from os import environ
 from datetime import datetime
 from flask import Flask, jsonify, make_response, url_for, request
-import settings
+#import settings
 
 # -- Application initialization. ---------------------------------------------
 
 __modeConfig__ = environ.get('MODE_CONFIG') or 'Development'
 APP = Flask(__name__)
-APP.config.from_object(getattr(settings, __modeConfig__.title()))
+#APP.config.from_object(getattr(settings, __modeConfig__.title()))
 
 # BME280 temperature/pressure/humidity sensor
 bme280 = BME280()
