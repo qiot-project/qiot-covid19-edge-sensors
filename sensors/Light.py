@@ -19,3 +19,8 @@ def light():
                 data = 1
 
             return return_simple(data, "Lux")
+
+
+@light_blueprint.route("/proximity")
+def proximity():
+            return return_simple(ltr559.get_proximity(), "Lux")
