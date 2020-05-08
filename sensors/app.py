@@ -109,14 +109,7 @@ def internal_error(error):
 @APP.before_request
 def before_request():
     """ This function handles  HTTP request as it arrives to the API """
-    proximity = ltr559.get_proximity()
-
-    # If the proximity crosses the threshold, toggle the mode
-    if proximity > 1500 and time.time() - last_page > delay:
-        mode += 1
-        mode %= len(variables)
-        last_page = time.time()
-    # pass
+    pass
 
 
 @APP.after_request
