@@ -1,13 +1,12 @@
-from datetime import datetime
 from flask import jsonify, make_response
-
+import time
 
 def return_simple(data, unit):
             headers = {}
             return make_response(
                     jsonify(
                         {
-                            'timestamp': datetime.utcnow().timestamp(),
+                            'timestamp': int(time.time()*1000.0),
                             'value': data,
                             'unit': unit
                             
