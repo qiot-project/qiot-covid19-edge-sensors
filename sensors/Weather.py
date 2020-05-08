@@ -21,19 +21,17 @@ def get_cpu_temperature():
     return temp
 
 
-# Tuning factor for compensation. Decrease this number to adjust the
-# temperature down, and increase to adjust up
-factor = 2.25
-
-cpu_temps = [get_cpu_temperature()] * 5
-
-
 @weather_blueprint.route("/temperature")
 def temperature():
             return return_simple(bme280.get_temperature(), "*C")
 
 @weather_blueprint.route("/compensatedtemperature")
 def compensated_temperature():
+        # Tuning factor for compensation. Decrease this number to adjust the
+        # temperature down, and increase to adjust up
+        factor = 2.25
+        
+        cpu_temps = [get_cpu_temperature()] * 5
         cpu_temp = get_cpu_temperature()
         # Smooth out with some averaging to decrease jitter
         cpu_temps = cpu_temps[1:] + [cpu_temp]
