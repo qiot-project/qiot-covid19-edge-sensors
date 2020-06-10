@@ -25,9 +25,8 @@ pms5003 = PMS5003()
 @particulates_blueprint.route("/")
 def all():
     
-            psm5003data = PMS5003Data(pms5003.read())
+            psm5003data = pms5003.read()
             readings=psm5003data.data
-            print(readings)
             
             returnDict = {
                 'PM1_0':readings[0],

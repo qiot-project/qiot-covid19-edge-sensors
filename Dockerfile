@@ -1,6 +1,6 @@
 FROM quay.io/qiot/qiot-sensor-service-base
 
-RUN pip install flask flask_restful
+RUN pip3 install flask flask_restful
 
 # Defining working directory and adding source code
 WORKDIR /usr/src/app
