@@ -8,7 +8,8 @@ system_blueprint = Blueprint('system', __name__)
 # Get Raspberry Pi serial number to use as ID
 @system_blueprint.route("/id")
 def get_serial_number():
-    with open('/proc/cpuinfo', 'r') as f:
+    #/proc/cpuinfo shows RPi Serial Number on 32bit kernel only!
+    with open('cat /sys/firmware/devicetree/base/serial-number', 'r') as f:
         for line in f:
             if line[0:6] == 'Serial':
                 return line.split(":")[1].strip()
