@@ -1,4 +1,4 @@
-FROM qiot-sensor-service-base
+FROM quay.io/qiot/qiot-sensor-service-base
 
 RUN pip install flask flask_restful
 
