@@ -6,4 +6,4 @@ system_blueprint = Blueprint('system', __name__)
 @system_blueprint.route("/id")
 def get_serial_number():
     #/proc/cpuinfo shows RPi Serial Number on 32bit kernel only!
-    return open('cat /sys/firmware/devicetree/base/serial-number', 'r').strip()
+    return open('/sys/firmware/devicetree/base/serial-number', 'r').strip()
