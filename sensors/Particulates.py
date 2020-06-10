@@ -5,7 +5,7 @@ from ReturnValue import return_simple, return_map
 particulates_blueprint = Blueprint('particulates', __name__)
 
 import time
-from pms5003 import PMS5003, ReadTimeoutError
+from pms5003 import PMS5003, PMS5003Data, ReadTimeoutError
 
 pms5003 = PMS5003()
 
@@ -25,7 +25,8 @@ pms5003 = PMS5003()
 @particulates_blueprint.route("/")
 def all():
     
-            readings = pms5003.read()
+            psm5003data = PMS5003Data(pms5003.read())
+            readings=psm5003data.data
             print(readings)
             
             returnDict = {
