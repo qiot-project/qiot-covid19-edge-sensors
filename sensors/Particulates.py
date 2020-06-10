@@ -26,7 +26,6 @@ pms5003 = PMS5003()
 def all():
     
             readings = pms5003.read()
-            logging.info(readings)
             print(readings)
             
             returnDict = {
