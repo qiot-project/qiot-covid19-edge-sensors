@@ -1,8 +1,19 @@
 from enviroplus import gas
 
 from flask import Blueprint
-from ReturnValue import return_simple
+from ReturnValue import return_simple, return_map
 gas_blueprint = Blueprint('gas', __name__)
+
+
+@gas_blueprint.route("/")
+def all():
+            returnDict = {
+                'oxidising':gas.read_oxidising(),
+                'reducing':gas.read_reducing(),
+                'nh3':gas.read_reducing(),
+                'adc':gas.read_nh3()
+            }
+            return return_map(returnDict)
 
 
 @gas_blueprint.route("/oxidising")

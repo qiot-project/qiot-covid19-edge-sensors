@@ -1,15 +1,16 @@
-from bme280 import BME280
-
-try:
-    from smbus2 import SMBus
-except ImportError:
-    from smbus import SMBus
+from enviroplus.noise import Noise
 
 from flask import Blueprint
-from ReturnValue import return_simple
+from ReturnValue import return_simple, return_map
 noise_blueprint = Blueprint('noise', __name__)
 
-bus = SMBus(1)
-bme280 = BME280(i2c_dev=bus)
 
-#TBD
+@gas_blueprint.route("/")
+def all():
+            returnDict = {
+#                 'oxidising':gas.read_oxidising(),
+#                 'reducing':gas.read_reducing(),
+#                 'nh3':gas.read_reducing(),
+#                 'adc':gas.read_nh3()
+            }
+            return return_map(returnDict)

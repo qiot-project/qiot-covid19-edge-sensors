@@ -13,3 +13,8 @@ def return_simple(data, unit):
                         }
                     ), 200, headers
                 )
+
+
+def return_map(dict):
+            headers = {}
+            return make_response(jsonify(dict), 200, headers)
