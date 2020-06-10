@@ -1,7 +1,4 @@
-from enviroplus import gas
-
 from flask import Blueprint
-from ReturnValue import return_simple, return_map
 system_blueprint = Blueprint('system', __name__)
 
 
@@ -9,7 +6,4 @@ system_blueprint = Blueprint('system', __name__)
 @system_blueprint.route("/id")
 def get_serial_number():
     #/proc/cpuinfo shows RPi Serial Number on 32bit kernel only!
-    with open('cat /sys/firmware/devicetree/base/serial-number', 'r') as f:
-        for line in f:
-            if line[0:6] == 'Serial':
-                return line.split(":")[1].strip()
+    return open('cat /sys/firmware/devicetree/base/serial-number', 'r').strip()
