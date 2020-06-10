@@ -21,7 +21,7 @@ pms5003 = PMS5003()
 # >2.5um in 0.1L air:
 # >5.0um in 0.1L air:
 # >10um in 0.1L air:
-@gas_blueprint.route("/")
+@particulates_blueprint.route("/")
 def all():
             returnDict = {
                 'PM1_0':pms5003.read()[0],
