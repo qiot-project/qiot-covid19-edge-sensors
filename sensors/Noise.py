@@ -5,7 +5,7 @@ from ReturnValue import return_simple, return_map
 noise_blueprint = Blueprint('noise', __name__)
 
 
-@noise_blueprint.route("/")
+@noise_blueprint.route("/all")
 def all():
             returnDict = {
 #                 'oxidising':gas.read_oxidising(),

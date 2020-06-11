@@ -5,7 +5,7 @@ from ReturnValue import return_simple, return_map
 gas_blueprint = Blueprint('gas', __name__)
 
 
-@gas_blueprint.route("/")
+@gas_blueprint.route("/all")
 def all():
             returnDict = {
                 'oxidising':gas.read_oxidising(),

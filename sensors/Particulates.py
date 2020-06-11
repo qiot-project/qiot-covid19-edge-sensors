@@ -22,7 +22,7 @@ pms5003 = PMS5003()
 # >2.5um in 0.1L air:
 # >5.0um in 0.1L air:
 # >10um in 0.1L air:
-@particulates_blueprint.route("/")
+@particulates_blueprint.route("/all")
 def all():
     
             psm5003data = pms5003.read()
