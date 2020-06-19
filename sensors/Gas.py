@@ -7,11 +7,13 @@ gas_blueprint = Blueprint('gas', __name__)
 
 @gas_blueprint.route("/all")
 def all():
+            gasMeasurement=gas.read_all()
+            
             returnDict = {
-                'oxidising':gas.read_oxidising(),
-                'reducing':gas.read_reducing(),
-                'nh3':gas.read_nh3(),
-                'adc':gas.read_adc()
+                'oxidising':gasMeasurement.oxidising,
+                'reducing':gasMeasurement.reducing,
+                'nh3':gasMeasurement.nh3,
+                'adc':gasMeasurement.adc
             }
             return return_map(returnDict)
 
