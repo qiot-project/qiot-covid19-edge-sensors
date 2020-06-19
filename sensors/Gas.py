@@ -10,8 +10,8 @@ def all():
             returnDict = {
                 'oxidising':gas.read_oxidising(),
                 'reducing':gas.read_reducing(),
-                'nh3':gas.read_reducing(),
-                'adc':gas.read_nh3()
+                'nh3':gas.read_nh3(),
+                'adc':gas.read_adc()
             }
             return return_map(returnDict)
 
