@@ -5,17 +5,17 @@ from ReturnValue import return_simple, return_map
 particulates_blueprint = Blueprint('particulates', __name__)
 
 import time
-from pms5003 import PMS5003, PMS5003Data, ReadTimeoutError
+from pms5003 import pmS5003, pmS5003Data, ReadTimeoutError
 
-pms5003 = PMS5003()
+pms5003 = pmS5003()
 
 
-# PM1.0 ug/m3 (ultrafine particles):
-# PM2.5 ug/m3 (combustion particles, organic compounds, metals):
-# PM10 ug/m3  (dust, pollen, mould spores):
-# PM1.0 ug/m3 (atmos env):
-# PM2.5 ug/m3 (atmos env):
-# PM10 ug/m3 (atmos env):
+# pm1.0 ug/m3 (ultrafine particles):
+# pm2.5 ug/m3 (combustion particles, organic compounds, metals):
+# pm10 ug/m3  (dust, pollen, mould spores):
+# pm1.0 ug/m3 (atmos env):
+# pm2.5 ug/m3 (atmos env):
+# pm10 ug/m3 (atmos env):
 # >0.3um in 0.1L air:
 # >0.5um in 0.1L air:
 # >1.0um in 0.1L air:
@@ -29,12 +29,12 @@ def all():
             readings=psm5003data.data
             
             returnDict = {
-                'PM1_0':readings[0],
-                'PM2_5':readings[1],
-                'PM10':readings[2],
-                'PM1_0_atm':readings[3],
-                'PM2_5_atm':readings[4],
-                'PM10_atm':readings[5],
+                'pm1_0':readings[0],
+                'pm2_5':readings[1],
+                'pm10':readings[2],
+                'pm1_0_atm':readings[3],
+                'pm2_5_atm':readings[4],
+                'pm10_atm':readings[5],
                 'gt0_3um':readings[6],
                 'gt0_5um':readings[7],
                 'gt1_0um':readings[8],
