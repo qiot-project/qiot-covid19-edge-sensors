@@ -5,6 +5,7 @@ RUN pip3 install flask flask_restful
 # Defining working directory and adding source code
 WORKDIR /usr/src/app
 COPY bootstrap.sh ./
+RUN ["chmod", "+x", "/usr/src/app/bootstrap.sh"]
 COPY sensors ./sensors
 
 # Start app
