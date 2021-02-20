@@ -5,9 +5,9 @@ from ReturnValue import return_simple, return_map
 particulates_blueprint = Blueprint('particulates', __name__)
 
 import time
-from pms5003 import pmS5003, pmS5003Data, ReadTimeoutError
+from pms5003 import PMS5003, PMS5003Data, ReadTimeoutError
 
-pms5003 = pmS5003()
+pms5003 = PMS5003()
 
 
 # pm1.0 ug/m3 (ultrafine particles):
